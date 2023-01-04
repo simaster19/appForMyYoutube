@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Users;
 use Illuminate\Http\Request;
 
-class UserController extends Controller
+class UsersController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +14,10 @@ class UserController extends Controller
      */
     public function index()
     {
-        return view('dashboard.index');
+        //return Users::all();
+        return view('dashboard.users.index', [
+            'dataUser' => Users::all()
+        ]);
     }
 
     /**

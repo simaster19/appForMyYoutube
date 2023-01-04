@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\UserController;
+use App\Http\Controllers\UsersController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -14,4 +15,7 @@ use App\Http\Controllers\UserController;
 |
 */
 
-Route::resource('/', UserController::class);
+Route::get('/', function () {
+    return view('dashboard.index');
+});
+Route::resource('/users', UsersController::class);
